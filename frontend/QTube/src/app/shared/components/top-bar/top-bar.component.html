@@ -1,0 +1,20 @@
+<nav
+  class="sticky top-0 z-10 flex items-center w-full p-4 lg:pl-[27px] bg-qt-black"
+>
+  <div class="flex items-center gap-4">
+    <button type="button" class="hidden sm:block lg:hidden">
+      <app-rounded-icon
+        [classes]="'drawer-toggler'"
+        [src]="'hamburguer.svg'"
+        [alt]="'Hamburguer icon'"
+        [width]="'w-[26px]'"
+      ></app-rounded-icon>
+    </button>
+
+    <a [routerLink]="['/']">
+      <h1>
+        <app-brand></app-brand>
+      </h1>
+    </a>
+  </div>
+</nav>

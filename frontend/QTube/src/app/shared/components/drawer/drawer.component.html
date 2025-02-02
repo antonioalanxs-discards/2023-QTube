@@ -1,0 +1,44 @@
+<div
+  id="background"
+  class="absolute top-0 left-0 transition-opacity duration-500 ease-in-out opacity-0 drawer-toggler backdrop-brightness-[.25]"
+></div>
+
+<aside
+  id="drawer"
+  class="fixed top-0 left-0 z-30 w-64 h-screen px-4 overflow-y-scroll transition-all duration-500 ease-in-out transform -translate-x-full opacity-0 bg-qt-black"
+>
+  <header class="sticky top-0 left-0 flex items-center gap-4 py-4">
+    <button type="button" class="rounded-xl">
+      <app-rounded-icon
+        [classes]="'drawer-toggler'"
+        [src]="'hamburguer.svg'"
+        [alt]="'Hamburguer icon'"
+        [width]="'w-[26px]'"
+      ></app-rounded-icon>
+    </button>
+
+    <a [routerLink]="['/']">
+      <h2>
+        <app-brand></app-brand>
+      </h2>
+    </a>
+  </header>
+
+  <nav class="pb-40">
+    <ng-container *ngFor="let option of options">
+      <a
+        [routerLink]="[option.link]"
+        routerLinkActive="bg-qt-gray"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="block mb-2 rounded-xl"
+      >
+        <app-horizontal-content
+          [src]="option.src"
+          [alt]="option.title + ' icon'"
+          [width]="'w-[26px]'"
+          [text]="option.title"
+        ></app-horizontal-content>
+      </a>
+    </ng-container>
+  </nav>
+</aside>

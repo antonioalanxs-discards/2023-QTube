@@ -1,0 +1,21 @@
+### Spring Boot ###
+**/target/
+
+### Visual Studio Code ###
+**/.vscode/
+**/META-INF
+
+### Docker ###
+**/mysql/
+
+### Node.js and Angular ###
+**/node_modules
+**/npm-debug.log
+**/yarn-error.log
+**/.angular/cache
+
+### System files ###
+**/.DS_Store
+**/Thumbs.db
+**/uploads
+**/uploads/*

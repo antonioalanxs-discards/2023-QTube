@@ -1,0 +1,21 @@
+<nav
+  class="fixed bottom-0 w-full border-t-2 bg-qt-black sm:hidden border-t-qt-gray"
+>
+  <div class="grid justify-center grid-cols-2">
+    <ng-container *ngFor="let option of options">
+      <a
+        [routerLink]="[option.link]"
+        routerLinkActive="bg-qt-gray"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <app-vertical-content
+          [flavour]="'mobile'"
+          [src]="option.src"
+          [alt]="option.title + 'icon'"
+          [width]="'w-7'"
+          [text]="option.title"
+        ></app-vertical-content>
+      </a>
+    </ng-container>
+  </div>
+</nav>

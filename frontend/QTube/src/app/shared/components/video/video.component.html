@@ -1,0 +1,62 @@
+<section class="transition-colors rounded-[9px] cursor-pointer">
+  <a [routerLink]="['/watch', slug]">
+    <figure>
+      <img
+        [src]="thumbnail"
+        alt="Thumbnail"
+        class="object-cover w-full h-full rounded-2xl"
+      />
+    </figure>
+  </a>
+
+  <div class="flex gap-2">
+    <a
+      [routerLink]="['/watch', slug]"
+      class="flex flex-col justify-center pl-3 gap-[0.125em] flex-grow pt-[0.625em]"
+    >
+      <h3 class="font-medium text-white text-wrap line-clamp-2">
+        {{ title }}
+      </h3>
+    </a>
+
+    <app-dialog [classes]="'max-w-[225px] rounded-xl bg-qt-gray'">
+      <button type="button" class="open-button pt-[0.625em]">
+        <app-rounded-icon
+          [src]="'dots.svg'"
+          [alt]="'Dots icon'"
+          [width]="'w-6'"
+        ></app-rounded-icon>
+      </button>
+
+      <div class="dialog-content">
+        <a class="block w-full" [routerLink]="['/update', slug]">
+          <app-horizontal-content
+            [flavour]="'dialog'"
+            [src]="'edit.svg'"
+            [alt]="'Edit icon'"
+            [width]="'w-6'"
+            [text]="'Edit video'"
+          ></app-horizontal-content>
+        </a>
+        <button class="w-full" type="button" (click)="delete()">
+          <app-horizontal-content
+            [flavour]="'dialog'"
+            [src]="'delete.svg'"
+            [alt]="'Delete icon'"
+            [width]="'w-6'"
+            [text]="'Delete video'"
+          ></app-horizontal-content>
+        </button>
+        <button class="w-full" type="button">
+          <app-horizontal-content
+            [flavour]="'dialog'"
+            [src]="'close.svg'"
+            [alt]="'Close icon'"
+            [width]="'w-6'"
+            [text]="'Close'"
+          ></app-horizontal-content>
+        </button>
+      </div>
+    </app-dialog>
+  </div>
+</section>
